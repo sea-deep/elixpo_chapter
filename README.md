@@ -5,8 +5,8 @@
 ### *The Ultimate AI Desktop Experience*
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Status-Alpha-yellow?style=for-the-badge&logo=visual-studio-code" alt="Status">
-  <img src="https://img.shields.io/badge/Version-0.0.0-blue?style=for-the-badge&logo=github" alt="Version">
+  <img src="https://img.shields.io/badge/Status-Stable-green?style=for-the-badge&logo=github" alt="Status">
+  <img src="https://img.shields.io/badge/Version-1.0.0-blue?style=for-the-badge&logo=github" alt="Version">
   <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge&logo=open-source-initiative" alt="License">
   <img src="https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge&logo=github-actions" alt="Build">
 </p>
@@ -34,10 +34,6 @@
 
 ### 🌐 **Multi-Provider AI Support**
 <p align="center">
-  <img src="https://img.shields.io/badge/OpenAI-GPT--4o-412991?style=flat-square&logo=openai" alt="OpenAI">
-  <img src="https://img.shields.io/badge/Anthropic-Claude-3.5-F46565?style=flat-square&logo=anthropic" alt="Anthropic">
-  <img src="https://img.shields.io/badge/Google-Gemini-1.5-4285F4?style=flat-square&logo=google" alt="Google">
-  <img src="https://img.shields.io/badge/Meta-Llama-3.1-0467DF?style=flat-square&logo=meta" alt="Meta">
   <img src="https://img.shields.io/badge/Local-Ollama-000000?style=flat-square&logo=linux" alt="Ollama">
 </p>
 
@@ -258,36 +254,6 @@ graph TD
 
 </div>
 
----
-
-## 📸 **Screenshots**
-
-<div align="center">
-
-### **Main Interface**
-<div style="background: #1a1a1a; padding: 20px; border-radius: 15px; margin: 20px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-
-*🖼️ Main chat interface showcasing multi-provider AI support and MCP integration*
-
-</div>
-
-### **Settings Panel**
-<div style="background: #1a1a1a; padding: 20px; border-radius: 15px; margin: 20px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-
-*🖼️ Advanced settings panel with provider configuration and MCP server management*
-
-</div>
-
-### **Voice Input**
-<div style="background: #1a1a1a; padding: 20px; border-radius: 15px; margin: 20px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-
-*🖼️ Voice input interface with real-time speech recognition*
-
-</div>
-
-</div>
-
----
 
 ## 🚀 **Installation**
 
@@ -300,8 +266,8 @@ graph TD
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/cortexone.git
-cd cortexone
+git clone https://github.com/Itachi-1824/CortexOne.git
+cd CortexOne
 
 # Install dependencies
 npm install
@@ -558,14 +524,14 @@ We welcome contributions from the community! Here's how you can help:
 
 ### **🌟 Ready to Experience the Future of AI?**
 
-**[⬇️ Download CortexOne](#)** • **[📖 Documentation](#)** • **[💬 Join Discussion](#)**
+**[⬇️ View on GitHub](https://github.com/Itachi-1824/CortexOne)** • **[📖 Documentation](https://github.com/Itachi-1824/CortexOne#readme)** • **[💬 Issues & Discussion](https://github.com/Itachi-1824/CortexOne/issues)**
 
 <p align="center">
   <strong>Built with ❤️ for the AI community</strong>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Status-Alpha-yellow?style=flat&logo=visual-studio-code" alt="Alpha Status">
+  <img src="https://img.shields.io/badge/Status-Stable-green?style=flat&logo=github" alt="Stable Release">
   <img src="https://img.shields.io/badge/PRs-Welcome-green?style=flat&logo=github" alt="PRs Welcome">
   <img src="https://img.shields.io/badge/License-MIT-blue?style=flat&logo=open-source-initiative" alt="MIT License">
 </p>
