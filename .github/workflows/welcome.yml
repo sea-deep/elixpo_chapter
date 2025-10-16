@@ -14,6 +14,15 @@ jobs:
   welcome:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install jq
+        run: |
+          if ! command -v jq &> /dev/null; then
+            sudo apt-get update && sudo apt-get install -y jq
+          fi
+
       - name: Check if first time contributor
         id: check
         uses: actions/github-script@v6

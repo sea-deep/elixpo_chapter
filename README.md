@@ -213,10 +213,12 @@ pip install -e ".[all]"
 | qdrant-client | 1.7.0+ | Vector storage |
 | sentence-transformers | 2.2.0+ | Embeddings |
 | pyyaml | 6.0.0+ | Config files |
+| python-dotenv | 1.0.0+ | Environment variables |
 | **Optional** | | |
 | openai | 1.0.0+ | OpenAI adapter |
 | anthropic | 0.18.0+ | Anthropic adapter |
 | ollama | 0.1.0+ | Ollama adapter |
+| huggingface-hub | 0.20.0+ | HuggingFace adapter |
 | keybert | 0.8.0+ | Enhanced heuristics |
 | spacy | 3.7.0+ | NER extraction |
 
