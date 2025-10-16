@@ -94,7 +94,7 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const welcomeText = `${{ steps.welcome.outputs.message }}`.replace(/`/g, "'");
+            const welcomeText = process.env.WELCOME_MESSAGE;
             
             const message = `${welcomeText}
 
@@ -117,3 +117,5 @@ jobs:
               repo: context.repo.repo,
               body: message
             });
+        env:
+          WELCOME_MESSAGE: ${{ steps.welcome.outputs.message }}

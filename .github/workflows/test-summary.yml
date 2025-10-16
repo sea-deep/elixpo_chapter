@@ -108,9 +108,9 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const summaryText = `${{ steps.summary.outputs.summary }}`.replace(/`/g, "'");
-            const testOutput = `${{ steps.results.outputs.output }}`.replace(/`/g, "'");
-            const coverage = '${{ steps.results.outputs.coverage }}';
+            const summaryText = process.env.SUMMARY_TEXT;
+            const testOutput = process.env.TEST_OUTPUT;
+            const coverage = process.env.COVERAGE;
             
             const summary = `## 🧪 Test Results Summary
 
@@ -135,15 +135,19 @@ jobs:
               repo: context.repo.repo,
               body: summary
             });
+        env:
+          SUMMARY_TEXT: ${{ steps.summary.outputs.summary }}
+          TEST_OUTPUT: ${{ steps.results.outputs.output }}
+          COVERAGE: ${{ steps.results.outputs.coverage }}
 
       - name: Create Check Run
         uses: actions/github-script@v6
         with:
           script: |
-            const exitCode = '${{ steps.tests.outputs.exit_code }}';
+            const exitCode = process.env.EXIT_CODE;
             const conclusion = exitCode === '0' ? 'success' : 'failure';
-            const summaryText = `${{ steps.summary.outputs.summary }}`.replace(/`/g, "'");
-            const coverage = '${{ steps.results.outputs.coverage }}';
+            const summaryText = process.env.SUMMARY_TEXT;
+            const coverage = process.env.COVERAGE;
             
             await github.rest.checks.create({
               owner: context.repo.owner,
@@ -158,3 +162,7 @@ jobs:
                 text: `Coverage: ${coverage}%`
               }
             });
+        env:
+          EXIT_CODE: ${{ steps.tests.outputs.exit_code }}
+          SUMMARY_TEXT: ${{ steps.summary.outputs.summary }}
+          COVERAGE: ${{ steps.results.outputs.coverage }}

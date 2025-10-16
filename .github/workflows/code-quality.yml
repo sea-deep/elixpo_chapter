@@ -98,8 +98,8 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const analysis = `${{ steps.analysis.outputs.analysis }}`.replace(/`/g, "'");
-            const lintOutput = `${{ steps.results.outputs.output }}`.replace(/`/g, "'");
+            const analysis = process.env.ANALYSIS;
+            const lintOutput = process.env.LINT_OUTPUT;
             
             const report = `## 📊 Code Quality Report
 
@@ -124,3 +124,6 @@ jobs:
               repo: context.repo.repo,
               body: report
             });
+        env:
+          ANALYSIS: ${{ steps.analysis.outputs.analysis }}
+          LINT_OUTPUT: ${{ steps.results.outputs.output }}

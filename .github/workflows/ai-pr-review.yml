@@ -84,7 +84,7 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const reviewText = `${{ steps.review.outputs.review }}`.replace(/`/g, "'");
+            const reviewText = process.env.REVIEW_TEXT;
             
             const review = `## 🤖 AI Code Review
 
@@ -100,3 +100,5 @@ jobs:
               repo: context.repo.repo,
               body: review
             });
+        env:
+          REVIEW_TEXT: ${{ steps.review.outputs.review }}

@@ -84,8 +84,8 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const notesText = `${{ steps.notes.outputs.notes }}`.replace(/`/g, "'");
-            const releaseTag = '${{ github.event.release.tag_name }}';
+            const notesText = process.env.NOTES_TEXT;
+            const releaseTag = process.env.RELEASE_TAG;
             
             const notes = `${notesText}
 
@@ -113,3 +113,6 @@ jobs:
               release_id: context.payload.release.id,
               body: notes
             });
+        env:
+          NOTES_TEXT: ${{ steps.notes.outputs.notes }}
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
