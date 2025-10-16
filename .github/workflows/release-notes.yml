@@ -84,14 +84,17 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const notes = `${{ steps.notes.outputs.notes }}
+            const notesText = `${{ steps.notes.outputs.notes }}`.replace(/`/g, "'");
+            const releaseTag = '${{ github.event.release.tag_name }}';
+            
+            const notes = `${notesText}
 
             ---
 
             ## 📦 Installation
 
             \`\`\`bash
-            pip install memory-arc==${{ github.event.release.tag_name }}
+            pip install memory-arc==${releaseTag}
             \`\`\`
 
             ## 🔗 Links

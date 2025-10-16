@@ -94,7 +94,9 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const message = `${{ steps.welcome.outputs.message }}
+            const welcomeText = `${{ steps.welcome.outputs.message }}`.replace(/`/g, "'");
+            
+            const message = `${welcomeText}
 
             ---
 
