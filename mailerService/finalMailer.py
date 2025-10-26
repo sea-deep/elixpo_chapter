@@ -7,7 +7,6 @@ from email.utils import formataddr
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from dotenv import load_dotenv
-from blackListEmails import cancelledList
 from retrieve import getEmailList
 
 load_dotenv()
@@ -20,8 +19,7 @@ FROM_EMAIL = SMTP_USER
 SUBJECT = "⚠️ [GDG JISU] Warning & Followup Instructions for being Inactive at Google Study Jams"
 
 all_emails = getEmailList()
-emails = [email for email in all_emails if email not in cancelledList]
-for email in emails:
+for email in all_emails:
     to_email = email
     print(f"Preparing email for <{to_email}>")
     content = prepareBody()
