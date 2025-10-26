@@ -79,4 +79,7 @@ elixpo-minecraft-mod/.gradle
 *.gguf
 *.safetensor
 
-
+# python virtual environment
+venv/
+__pycache__/
+*.pyc

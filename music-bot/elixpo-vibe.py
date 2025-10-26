@@ -107,7 +107,7 @@ class MusicControlView(View):
 
     @discord.ui.button(label="⏹️ Stop", style=ButtonStyle.danger)
     async def stop_button(self, interaction: Interaction, button: Button):
-        global current_voice_client, queue, is_looping
+        global current_voice_client, song_queue, is_looping
         if current_voice_client and current_voice_client.is_playing():
             is_looping = False
             loop_button = next((b for b in self.children if isinstance(b, discord.ui.Button) and b.label.startswith("🔁")), None)
@@ -233,7 +233,9 @@ async def checkPermission(interaction):
 
     # Check if all required permissions are granted
     if not all(required_permissions):
-        print(f"Warning: Bot does not have all necessary permissions in the guild: {guild.name}")
+        # Use interaction.guild to report the guild name instead of an undefined variable
+        guild_name = interaction.guild.name if interaction.guild is not None else "Unknown Guild"
+        print(f"Warning: Bot does not have all necessary permissions in the guild: {guild_name}")
         missing_permissions = [
             perm for perm, has_perm in zip([
                 "connect", "speak", "read_messages",
@@ -253,7 +255,7 @@ async def checkPermission(interaction):
 # Play command as a slash command
 @bot.tree.command(name='play', description="Play a song by name")
 async def play(interaction: discord.Interaction, song_name: str):
-    global current_voice_client, current_song_info, queue, is_looping
+    global current_voice_client, current_song_info, song_queue, is_looping
 
     if await checkPermission(interaction):
         # Ensure the user is in a voice channel
@@ -288,7 +290,7 @@ async def play(interaction: discord.Interaction, song_name: str):
         # Get the song's audio URL, title, duration, and thumbnail
         audio_url, title, duration, thumbnail_url = await get_audio_url(song_name)
         if current_voice_client.is_playing() or current_voice_client.is_paused():
-            queue.append((audio_url, title, duration, thumbnail_url))
+            song_queue.append((audio_url, title, duration, thumbnail_url))
             await interaction.followup.send(f"Added **{title}** to the queue.", ephemeral=True)
         else:
             current_song_info = {
@@ -321,7 +323,7 @@ async def ping(interaction: discord.Interaction):
 
 @bot.tree.command(name='play_url', description="Play music from a YouTube URL")
 async def play_url(interaction: discord.Interaction, url: str):
-    global current_voice_client, current_song_info, queue, is_looping
+    global current_voice_client, current_song_info, song_queue, is_looping
 
     if await checkPermission(interaction):
         # Ensure the user is in a voice channel
@@ -366,7 +368,7 @@ async def play_url(interaction: discord.Interaction, url: str):
             thumbnail_url = info['thumbnail']
 
         if current_voice_client.is_playing() or current_voice_client.is_paused():
-            queue.append((audio_url, title, duration, thumbnail_url))
+            song_queue.append((audio_url, title, duration, thumbnail_url))
             await interaction.followup.send(f"Added **{title}** to the queue.", ephemeral=True)
         else:
             current_song_info = {
@@ -448,29 +450,29 @@ async def loop(interaction: discord.Interaction):
 
 @bot.tree.command(name='help', description="Show help information")
 async def help(interaction: discord.Interaction):
-    help_message = """
-    **Music Bot Commands**
+  help_message = """
+**Music Bot Commands**
 
-    **/play <song_name>**: Play a song by name.
-    **/play_url <url>**: Play music from a YouTube URL.
-    **/skip**: Skip the current song.
-    **/queue**: Show the current queue.
-    **/pause**: Pause or resume the current song.
-    **/stop**: Stop the current song and clear the queue.
-    **/loop**: Toggle looping of the current song.
-    **/ping**: Check the bot's responsiveness.
+**/play <song_name>**: Play a song by name.
+**/play_url <url>**: Play music from a YouTube URL.
+**/skip**: Skip the current song.
+**/queue**: Show the current queue.
+**/pause**: Pause or resume the current song.
+**/stop**: Stop the current song and clear the queue.
+**/loop**: Toggle looping of the current song.
+**/ping**: Check the bot's responsiveness.
 
-    **Music Control Buttons**:
-    - ⏸️ **Pause**: Pause or resume the current song.
-    - ⏹️ **Stop**: Stop the current song and clear the queue.
-    - ⏭️ **Skip**: Skip to the next song.
-    - 📃 **Queue**: Show the current queue.
-    - 🔌 **Disconnect**: Disconnect the bot from the voice channel.
-    - 🔁 **Loop**: Toggle looping of the current song.
-    - 🔉 **Volume Down**: Decrease the volume.
-    - 🔊 **Volume Up**: Increase the volume.
-    """
-    await interaction.response.send_message(help_message, ephemeral=False)
+**Music Control Buttons**:
+- ⏸️ **Pause**: Pause or resume the current song.
+- ⏹️ **Stop**: Stop the current song and clear the queue.
+- ⏭️ **Skip**: Skip to the next song.
+- 📃 **Queue**: Show the current queue.
+- 🔌 **Disconnect**: Disconnect the bot from the voice channel.
+- 🔁 **Loop**: Toggle looping of the current song.
+- 🔉 **Volume Down**: Decrease the volume.
+- 🔊 **Volume Up**: Increase the volume.
+"""
+  await interaction.response.send_message(help_message, ephemeral=False)
 
 @bot.tree.command(name='replay', description="Replay the current song")
 async def replay(interaction: discord.Interaction):
