@@ -1,7 +1,3 @@
-Here’s a **cross-platform README** version with Linux/macOS and Windows instructions side by side:
-
----
-
 # Elixpo Vibe — Discord Music Bot
 
 This folder contains a small Discord music bot that uses **yt-dlp + FFmpeg** to stream audio into voice channels and provides slash commands and UI buttons for basic playback control.
