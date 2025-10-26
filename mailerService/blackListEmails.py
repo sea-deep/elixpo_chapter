@@ -3,4 +3,5 @@ cancelledList = [
     "ompampatil181@gmail.com",
     "9951812013chaitali@gmail.com",
     "arijitaofficiai25@gmail.com",
+    "georgiandeep@proton.me"
 ]

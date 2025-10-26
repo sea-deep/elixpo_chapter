@@ -1,5 +1,6 @@
 import csv
 import pandas as pd
+from blackListEmails import cancelledList
 def getData():
     df = pd.read_csv("data/data.csv")
     return df 
@@ -16,3 +17,9 @@ def getEmailList():
     email_list = filtered_df['User Email'].tolist()
     return email_list
 
+
+if __name__ == "__main__":
+    all_emails = getEmailList()
+    all_emails = [email for email in all_emails if email not in cancelledList]
+    print(all_emails)
+    print(f"Total emails to send: {len(all_emails)}")
