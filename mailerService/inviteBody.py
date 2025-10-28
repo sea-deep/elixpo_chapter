@@ -4,17 +4,16 @@ def prepareBody():
     <head>
         <style>
             body {
-                font-family: 'Arial', sans-serif;
-                background-color: #f4f7fa;
+                font-family: 'Segoe UI', Arial, sans-serif;
+                background-color: #f6f9fc;
                 margin: 0;
                 padding: 0;
             }
             .container {
-                max-width: 700px;
+                max-width: 720px;
                 margin: 30px auto;
                 background: #ffffff;
                 border-radius: 12px;
-                padding: 0;
                 box-shadow: 0 6px 20px rgba(0,0,0,0.1);
                 overflow: hidden;
             }
@@ -25,61 +24,67 @@ def prepareBody():
             .content {
                 padding: 30px;
             }
-            .warning-header {
+            .header {
                 background-color: #EA4335;
                 color: white;
                 padding: 15px 30px;
                 font-size: 18px;
                 font-weight: bold;
                 text-align: center;
-                margin: -30px -30px 20px -30px;
+                letter-spacing: 0.5px;
             }
             h2 {
-                font-size: 24px;
-                margin-bottom: 20px;
+                font-size: 22px;
                 color: #EA4335;
-                font-weight: bold;
-            }
-            h2 span {
-                color: #4285F4;
+                margin-bottom: 10px;
+                font-weight: 700;
             }
             p {
                 color: #333333;
                 line-height: 1.6;
                 font-size: 15px;
             }
-            .highlight {
-                background: #fff3cd;
-                padding: 12px 18px;
-                border-left: 5px solid #EA4335;
+            .intro {
+                background: #fff7e6;
+                border-left: 5px solid #ffa000;
+                padding: 15px 20px;
                 border-radius: 6px;
                 margin: 20px 0;
-                font-size: 14px;
-                border: 1px solid #ffeaa7;
-            }
-            .critical-warning {
-                background: #ffebee;
-                padding: 15px 20px;
-                border: 2px solid #EA4335;
-                border-radius: 8px;
-                margin: 20px 0;
-                font-size: 16px;
-                font-weight: bold;
-                color: #c62828;
             }
             .steps {
-                background: #f8f9fa;
+                background: #f9fbff;
+                border-left: 5px solid #4285F4;
                 padding: 20px;
-                border-radius: 8px;
-                margin: 20px 0;
-                border-left: 4px solid #4285F4;
+                border-radius: 10px;
+                margin: 25px 0;
             }
             .step-item {
                 margin-bottom: 15px;
-                padding: 10px;
-                background: white;
+                padding: 12px;
+                background: #ffffff;
                 border-radius: 6px;
                 border: 1px solid #e0e0e0;
+            }
+            .step-item strong {
+                color: #1a73e8;
+            }
+            .highlight {
+                background: #e3f2fd;
+                padding: 12px 18px;
+                border-left: 5px solid #1a73e8;
+                border-radius: 8px;
+                margin: 20px 0;
+            }
+            .deadline-warning {
+                background: #ffe6e6;
+                border: 2px solid #d32f2f;
+                padding: 15px;
+                border-radius: 10px;
+                text-align: center;
+                margin: 25px 0;
+                color: #b71c1c;
+                font-weight: 600;
+                font-size: 15px;
             }
             .footer {
                 margin-top: 30px;
@@ -88,6 +93,7 @@ def prepareBody():
                 border-top: 1px solid #ddd;
                 padding: 15px 30px;
                 background: #fafafa;
+                text-align: center;
             }
             .whatsapp-link {
                 display: inline-block;
@@ -99,101 +105,117 @@ def prepareBody():
                 border-radius: 8px;
                 margin: 10px 0;
             }
-            .deadline-warning {
-                background: #ffcdd2;
-                border: 2px solid #d32f2f;
-                padding: 15px;
-                border-radius: 8px;
-                text-align: center;
-                margin: 20px 0;
-                font-weight: bold;
-                color: #d32f2f;
-            }
         </style>
     </head>
     <body>
         <div class="container">
             <img src="https://github.com/user-attachments/assets/cb88d801-1378-4100-a984-11752ad84658" 
                  alt="GDG JIS University Banner" class="banner" />
+
+            <div class="header">
+                ⚠️ IMPORTANT UPDATE – GOOGLE STUDY JAMS PROGRESS ALERT ⚠️
+            </div>
+
             <div class="content">
-                <div class="warning-header">
-                    URGENT WARNING - IMMEDIATE ACTION FOR GOOGLE STUDY JAMS
-                </div>
-
-                <h2><span>SERIOUS NOTICE:</span> Google Study Jams Participation Warning</h2>
-
-                <div class="critical-warning">
-                    🚨 You are receiving this warning for showing NO ACTIVITY in Google Study Jams despite registration. This is MANDATORY participation for all GDG JIS University members.
-                </div>
-
-                <p><strong>IMMEDIATE REQUIREMENTS:</strong></p>
-
-                <div class="highlight">
-                    <p style="margin: 0; font-weight: 600;">
-                        📱 <strong>JOIN WHATSAPP GROUP NOW:</strong><br>
-                        <a href="https://chat.whatsapp.com/DXT1XFtoOSI2g41Ba2XcyD?mode=ems_copy_t" class="whatsapp-link">
-                            Join Discussion Group
-                        </a><br>
-                        This is for coordination and updates regarding Study Jams completion.
+                <div class="intro">
+                    <p><strong>Hello folks!</strong><br>
+                    I’m <strong>Ayushman</strong>, your GDG JISU Campus Organizer 👋</p>
+                    <p>
+                    Half of the <strong>Google Study Jams</strong> journey is already over! 
+                    If things feel a bit heavy — don’t worry, I’ve got you covered. 
+                    I’ll walk you through <strong>exactly what to do</strong> — the whole thing takes barely <strong>3 days</strong> to finish!
                     </p>
                 </div>
 
+                <h2>📘 Complete Guide (TOTAL 8 STEPS)</h2>
+
                 <div class="steps">
-                    <h3 style="color: #EA4335; margin-top: 0;">MANDATORY STEPS TO COMPLETE:</h3>
-                    
                     <div class="step-item">
-                        <strong>STEP 1: Claim Your Free 400 Google Cloud Credits</strong><br>
-                        • Check this email for Google Cloud Skillboost enrollment email which you might have recieved around October 20th.<br>
-                        • Use the access code provided in that email<br>
-                        • <strong>Watch this guide:</strong> <a href="https://www.youtube.com/watch?v=bhV9xgXZqwk">https://www.youtube.com/watch?v=bhV9xgXZqwk</a><br>
-                        • <strong>TIP:</strong> Sign out and sign in again after claiming to ensure credits are fully activated
+                        <strong>STEP 1:</strong> Go to your registered Gmail (used for Study Jams).  
+                        Find the mail from Google (around <strong>October 20th</strong>) — it contains 2 codes (blue box + green box).  
+                        Copy the <strong>access code in the blue box</strong>, click the blue box link, paste the code when asked, and sign in with your SkillBoost account.
                     </div>
 
                     <div class="step-item">
-                        <strong>STEP 2: Follow the Official Syllabus</strong><br>
-                        • Access the syllabus: <a href="http://goo.gle/gcsj25"><strong>goo.gle/gcsj25</strong></a><br>
-                        • This contains all required labs and challenges
+                        <strong>STEP 2:</strong> Watch this short video:  
+                        <a href="https://www.youtube.com/watch?v=bhV9xgXZqwk&t=30s">https://www.youtube.com/watch?v=bhV9xgXZqwk&t=30s</a>  
+                        Start from 30s and follow along to claim your <strong>400 free Google Cloud credits</strong>.  
+                        ⏳ Stay in the lab for at least <strong>6 minutes</strong> and wait until the timer shows around 37–38 minutes.  
+                        Click “Check My Progress” multiple times in 10–15s intervals.
                     </div>
 
                     <div class="step-item">
-                        <strong>STEP 3: Complete Chapter 1 Labs</strong><br>
-                        • Complete ALL labs from Chapter 1: "The Basics of Google Cloud Compute"<br>
-                        • <strong>Complete guide + solutions:</strong> <a href="https://docs.google.com/document/d/1-k53ZYDLX4nhMWa95j5oA9ANhzJ8c8ueVReVIO2qjg0/edit?usp=sharing">Google Study Jams Guide</a>
+                        <strong>STEP 2.1:</strong> Go back to your mail and use the <strong>green box (Arcade Code)</strong>.  
+                        Paste the arcade code when asked — you’ll be enrolled in the Arcade.  
+                        If it shows “0 spots left”, retry the next morning.
                     </div>
 
                     <div class="step-item">
-                        <strong>STEP 4: Complete Challenge Labs (Chapters 2-19)</strong><br>
-                        • For chapters 2-19, complete ONLY the "Challenge Labs"<br>
-                        • These will earn you the required badges<br>
-                        • Solutions available in the same guide document above
+                        <strong>STEP 3:</strong> After claiming, sign out and sign in again — you’ll see <strong>400+ credits</strong> in your profile 🎉
                     </div>
 
                     <div class="step-item">
-                        <strong>STEP 5: Complete the Arcade (Max 2 hours)</strong><br>
-                        • Complete the arcade section as outlined in the guide<br>
-                        • Guide available: <a href="https://docs.google.com/document/d/1-k53ZYDLX4nhMWa95j5oA9ANhzJ8c8ueVReVIO2qjg0/edit?usp=sharing">Google Study Jams Guide</a>
+                        <strong>STEP 4:</strong> Check the official syllabus:  
+                        <a href="https://goo.gle/gcsj25">https://goo.gle/gcsj25</a>  
+                        It includes Chapters 1–19 + Arcade (Chapter 20).
+                    </div>
+
+                    <div class="step-item">
+                        <strong>STEP 5:</strong> For <strong>Chapter 1 – "Basics of Google Cloud Compute"</strong>, complete the challenge lab only (takes max 10 mins).  
+                        Video + solution guide here:  
+                        <a href="https://docs.google.com/document/d/1-k53ZYDLX4nhMWa95j5oA9ANhzJ8c8ueVReVIO2qjg0/edit?usp=sharing">
+                        Google Study Jams Guide</a>
+                    </div>
+
+                    <div class="step-item">
+                        <strong>STEP 6:</strong> For Chapters <strong>2–19</strong>, complete only the <strong>Challenge Labs</strong>.  
+                        Each lab gives you badges 🏅  
+                        Use the same guide document linked above.
+                    </div>
+
+                    <div class="step-item">
+                        <strong>STEP 7:</strong> Once done till Chapter 19, go to <strong>Arcade Level 1</strong> (from the same enrollment mail).  
+                        Take your time (around 2–3 hours). This is the fun part 🎮  
+                        Guide: <a href="https://docs.google.com/document/d/1-k53ZYDLX4nhMWa95j5oA9ANhzJ8c8ueVReVIO2qjg0/edit?usp=sharing">
+                        Google Study Jams Guide</a>
+                    </div>
+
+                    <div class="step-item">
+                        <strong>STEP 8:</strong> Once you complete Arcade — you’ll have a total of <strong>20 badges</strong> (19 from Study Jams + 1 from Arcade).  
+                        🎯 That’s the full completion — Congratulations!
                     </div>
                 </div>
 
                 <div class="deadline-warning">
-                    🚨 CRITICAL DEADLINES 🚨<br>
-                    <strong>Option 1:</strong> Complete by 30th October 2024<br>
-                    <strong>Option 2:</strong> Complete between 4th November - 19th November 2024<br>
+                    🚨 <strong>IMPORTANT DEADLINES</strong> 🚨<br>
+                    • Halfway mark passed — <strong>Act now!</strong><br>
+                    • <strong>Batch 1 Deadline:</strong> 30th October 2024<br>
+                    • <strong>Batch 2 Window:</strong> 4th Nov – 19th Nov 2024<br>
                     <strong>FINAL DEADLINE: 19th November 2024</strong>
                 </div>
 
-                <div class="critical-warning">
-                    ⚠️ <strong>TIER 1 REQUIREMENT:</strong> We need 100 participants to complete this pathway to achieve Tier 1 status. Current participation is UNACCEPTABLY LOW. Your participation is MANDATORY as a registered member of GDG JIS University.
+                <div class="highlight">
+                    <p>
+                        If 100 of us finish this pathway, GDG JISU will hit <strong>Tier 1</strong> 🚀  
+                        and we’ll unlock <strong>Google swags & recognition</strong> 🎁  
+                        Let’s make this happen together!
+                    </p>
                 </div>
 
-                <div class="critical-warning">
-                    🔴 <strong>FINAL WARNING:</strong> This is not optional. Complete the Study Jams pathway or face consequences for non-participation. We MUST achieve Tier 1 status.
+                <div class="highlight" style="background:#e8f5e9; border-left-color:#25D366;">
+                    <p>
+                        💬 <strong>Join our Study Jams WhatsApp group</strong> for help, updates & discussions:<br>
+                        <a href="https://chat.whatsapp.com/DXT1XFtoOSI2g41Ba2XcyD?mode=ems_copy_t" class="whatsapp-link">
+                            Join Discussion Group
+                        </a><br>
+                        Reach out to me (<strong>Ayushman</strong>) or tag <strong>Abhisekh da</strong> for any doubt — we’re happy to help!
+                    </p>
                 </div>
 
                 <div class="footer">
                     <p><strong>GDG JIS University Organizing Team</strong><br>
                     Official Google Developer Groups Chapter JISU</p>
-                    <p style="color: #EA4335; font-weight: bold;">This is your warning. Act immediately.</p>
+                    <p style="color: #EA4335; font-weight: bold;">Stay calm, stay consistent — and let’s finish this strong 💪</p>
                 </div>
             </div>
         </div>
