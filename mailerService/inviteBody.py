@@ -189,9 +189,10 @@ def prepareBody():
                 <div class="deadline-warning">
                     🚨 <strong>IMPORTANT DEADLINES</strong> 🚨<br>
                     • Halfway mark passed — <strong>Act now!</strong><br>
-                    • <strong>Batch 1 Deadline:</strong> 30th October 2024<br>
-                    • <strong>Batch 2 Window:</strong> 4th Nov – 19th Nov 2024<br>
-                    <strong>FINAL DEADLINE: 19th November 2024</strong>
+                    • <strong>1st Deadline:</strong> 30th October 2025<br>
+                    • <strong>2nd Deadline:</strong> 4th Nov – 19th Nov 2025<br>
+                    • <strong>We will have a gap from 1st Nov - 3rd Nov these 3 days will not be counted so you can take a break</strong> 
+                    <strong>FINAL DEADLINE: 19th November 2025</strong>
                 </div>
 
                 <div class="highlight">
@@ -208,7 +209,7 @@ def prepareBody():
                         <a href="https://chat.whatsapp.com/DXT1XFtoOSI2g41Ba2XcyD?mode=ems_copy_t" class="whatsapp-link">
                             Join Discussion Group
                         </a><br>
-                        Reach out to me (<strong>Ayushman</strong>) or tag <strong>Abhisekh da</strong> for any doubt — we’re happy to help!
+                        Reach out to me (<strong>@elixpo (on whatsapp)</strong>) or tag <strong>Abhisekh Gupta da</strong> for any doubt — we’re happy to help!
                     </p>
                 </div>
 
