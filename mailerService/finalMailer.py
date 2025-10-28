@@ -17,7 +17,7 @@ SMTP_USER = os.getenv("MAIL_USER")
 SMTP_PASSWORD = os.getenv("MAIL_PASS")  
 FROM_EMAIL = SMTP_USER
 SUBJECT = "⚠️ [GDG JISU] Warning & Followup Instructions for being Inactive at Google Study Jams"
-testMode = True
+testMode = False
 
 if testMode:
         to_email = "ayushbhatt633@gmail.com"

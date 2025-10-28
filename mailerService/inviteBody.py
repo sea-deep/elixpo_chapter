@@ -210,6 +210,11 @@ def prepareBody():
                             Join Discussion Group
                         </a><br>
                         Reach out to me (<strong>@elixpo (on whatsapp)</strong>) or tag <strong>Abhisekh Gupta da</strong> for any doubt — we’re happy to help!
+                        <br><br>
+                        📊 <strong>Leaderboard Updates:</strong>  
+                        Our leaderboard is updated daily between <strong>1:00 – 2:00 pm IST</strong> at  
+                        <a href="https://gdg.elixpo.com" target="_blank">https://gdg.elixpo.com</a>  
+                        Check your progress and see where you stand!
                     </p>
                 </div>
 
