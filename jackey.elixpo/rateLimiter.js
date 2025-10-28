@@ -8,8 +8,8 @@ class RateLimiter {
         
         // Default limits (can be configured)
         this.limits = {
-            generate: { window: 60, maxRequests: 5 },  // 5 requests per minute
-            remix: { window: 60, maxRequests: 5 },     // 5 requests per minute
+            generate: { window: 60, maxRequests: 3 },  // 3 requests per minute
+            remix: { window: 60, maxRequests: 3 },     // 3 requests per minute
             help: { window: 30, maxRequests: 3 },      // 3 requests per 30 seconds
             ping: { window: 10, maxRequests: 2 }       // 2 requests per 10 seconds
         };
