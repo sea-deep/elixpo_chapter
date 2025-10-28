@@ -29,11 +29,11 @@ export async function handleHelp(interaction) {
 - **\`/help\`** — Display this help message.
     `;
     try {
-        await interaction.reply({ content: helpMessage, ephemeral: false });
+        await interaction.reply({ content: helpMessage, flags: [] });
     } catch (e) {
         console.error("Error sending help message:", e);
         try {
-            await interaction.reply({ content: "Oops! Something went wrong with the help command.", ephemeral: true });
+            await interaction.reply({ content: "Oops! Something went wrong with the help command.",                 flags: ['Ephemeral'] });
         } catch {}
     }
 }

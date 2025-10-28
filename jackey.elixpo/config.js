@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
-export const DISCORD_TOKEN = process.env.TOKEN;
+export const DISCORD_TOKEN = process.env.DISCORD_TOKEN;
 export const POLLINATIONS_TOKEN = process.env.POLLINATIONS_TOKEN;
 export const CLIENT_ID = process.env.CLIENT_ID;
 export const TEST_GUILD_ID = '1211167740698566717';

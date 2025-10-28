@@ -6,6 +6,7 @@ import { handlePing } from './commands/ping.js';
 import { handleHelp } from './commands/help.js';
 import { EmbedBuilder, AttachmentBuilder, ButtonBuilder, ButtonStyle } from 'discord.js';
 import { Semaphore } from './semaphore.js';
+import { rateLimiter } from './rateLimiter.js';
 
 let queue = [];
 let isProcessing = false;
@@ -13,17 +14,39 @@ let isProcessing = false;
 
 const commandSemaphore = new Semaphore(5);
 client.on('interactionCreate', async interaction => {
-  // if (interaction.guildId !== TEST_GUILD_ID) {
-  //   try {
-  //     await interaction.reply({
-  //       content: "🚧 The bot is currently under development and only available in the test server.",
-  //       ephemeral: true
-  //     });
-  //   } catch (e) {
-  //     console.error("Error sending dev-only message:", e);
-  //   }
-  //   return;
-  // }
+  if (!interaction.isCommand()) return;
+
+  // Check rate limit
+  if (rateLimiter.isRateLimited(interaction.user.id, interaction.commandName)) {
+    const cooldown = rateLimiter.getRemainingCooldown(interaction.user.id, interaction.commandName);
+    try {
+      await interaction.reply({
+        content: `⏳ Please wait ${cooldown} seconds before using this command again.`,
+        flags: ['Ephemeral']
+      });
+    } catch (e) {
+      console.error("Error sending rate limit message:", e);
+    }
+    return;
+  }
+
+  // Handle permission checks for generate and remix commands
+  if (interaction.commandName === 'generate' || interaction.commandName === 'remix') {
+    const missingPerms = interaction.guild.members.me.permissionsIn(interaction.channel)
+      .missing([PERMISSIONS.AttachFiles, PERMISSIONS.SendMessages]);
+    
+    if (missingPerms.length > 0) {
+      try {
+        await interaction.reply({
+          content: `❌ I'm missing these permissions: ${missingPerms.map(getPermissionName).join(', ')}`,
+          flags: ['Ephemeral']
+        });
+      } catch (e) {
+        console.error("Error sending permissions message:", e);
+      }
+      return;
+    }
+  }
 
   if (interaction.isChatInputCommand()) {
     if (interaction.user.bot) return;

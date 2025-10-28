@@ -37,7 +37,7 @@
         const response = await fetch(imageURL);
         if (!response.ok) throw new Error(`Fetch failed: ${response.status}`);
 
-        const buffer = await response.buffer();
+        const buffer = Buffer.from(await response.arrayBuffer());
         fs.writeFileSync('output.jpg', buffer);
         console.log("✅ Image saved as output.jpg");
 

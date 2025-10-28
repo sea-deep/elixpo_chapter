@@ -14,7 +14,8 @@ const client = new Client({
 });
 
 
-client.on('ready', async () => {
+// Handle both ready and clientReady events for compatibility
+const readyHandler = async () => {
     console.log(`${client.user.tag} is online and ready!`);
     client.user.setActivity("Pixels in the sky!", { type: 4 }); 
 
@@ -27,6 +28,10 @@ client.on('ready', async () => {
         const randomActivity = activities[Math.floor(Math.random() * activities.length)];
         client.user.setActivity(randomActivity.name, { type: randomActivity.type });
     }, 10 * 60 * 1000);
-});
+};
+
+// Register event handlers for both current and future discord.js versions
+client.on('ready', readyHandler);
+client.on('clientReady', readyHandler);
 
 export { client, PERMISSIONS, getPermissionName };

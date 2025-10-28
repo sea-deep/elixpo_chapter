@@ -97,7 +97,7 @@ async function remixImageStyled(interaction, uploadedUrls, prompt, seed, aspectR
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        const buffer = await response.buffer();
+        const buffer = Buffer.from(await response.arrayBuffer());
         if (buffer.length > 500) {
             const attachment = new AttachmentBuilder(buffer, { name: `elixpo_ai_remix.jpg` });
 

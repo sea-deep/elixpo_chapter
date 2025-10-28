@@ -172,7 +172,7 @@ const commands = [
 
 // Function to register the commands
 const registerCommands = async () => {
-  const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
+  const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN);
   
   try {
     console.log('Started refreshing application (/) commands.');

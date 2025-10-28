@@ -49,7 +49,7 @@ export async function generateImage(interaction) {
         try {
             const response = await fetch(imgurl, { method: 'GET' });
             if (!response.ok) continue;
-            const buffer = await response.buffer();
+            const buffer = Buffer.from(await response.arrayBuffer());
             if (buffer.length > 500) {
                 const attachment = new AttachmentBuilder(buffer, { name: `elixpo_ai_image_${i + 1}.jpg` });
                 imagesWithUrls.push({ attachment, url: imgurl }); 
@@ -90,7 +90,7 @@ export async function generateRemixImage(interaction, sourceImageUrl, aspectRati
     try {
         const response = await fetch(remixUrl, { method: 'GET' });
         if (!response.ok) throw new Error(`Remix fetch failed: ${response.status}`);
-        const buffer = await response.buffer();
+        const buffer = Buffer.from(await response.arrayBuffer());
         if (buffer.length > 500) {
             const attachment = new AttachmentBuilder(buffer, { name: `elixpo_ai_remix.jpg` });
             imagesWithUrls.push({ attachment, url: remixUrl }); 
